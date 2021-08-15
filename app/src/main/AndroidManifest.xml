@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.abstractplayer.abstracttool">
+
+    <uses-permission android:name="android.permission.READ_CALENDAR" /> <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 读文件权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AbstractTool">
+        <activity android:name=".toolkits.tool00008.Tool00008MainActivity"></activity>
+        <activity android:name=".toolkits.tool00007.Tool00007MainActivity" />
+        <activity android:name=".toolkits.tool00006.Tool00006MainActivity" />
+        <activity android:name=".toolkits.tool00005.Tool00005MainActivity" />
+        <activity android:name=".common.base.BaseToolMainActivity" />
+        <activity android:name=".toolkits.tool00004.Tool00004MainActivity" />
+        <activity android:name=".toolkits.tool00003.Tool00003MainActivity" />
+        <activity android:name=".main.tool.ToolInfoActivity" />
+        <activity android:name=".toolkits.tool00002.Tool00002MainActivity" />
+        <activity android:name=".StartupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".toolkits.tool00001.Tool00001MainActivity" />
+        <activity android:name=".main.MainActivity" />
+    </application>
+
+</manifest>

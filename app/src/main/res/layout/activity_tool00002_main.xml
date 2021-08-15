@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".toolkits.tool00002.Tool00002MainActivity">
+
+    <com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup
+        android:id="@+id/commonBarOnlyBackup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+    </com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.abstractplayer.abstracttool.toolkits.tool00002.Tool00002MathView
+                android:id="@+id/tool00002_math_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widget_margin_vertical"
+                android:visibility="visible" />
+
+            <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
+                android:id="@+id/tool00002_calculate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/widget_margin_vertical"
+                android:layout_marginBottom="@dimen/widget_margin_vertical"
+                app:button_title="点击解数独" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

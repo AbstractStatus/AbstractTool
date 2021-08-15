@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_bottom_image_size">50dp</dimen>
+    <dimen name="main_bottom_image_margin">4dp</dimen>
+    <dimen name="main_bottom_image_padding">8dp</dimen>
+
+    <dimen name="common_button_radius">16dp</dimen>
+    <dimen name="common_margin_bar_top">28dp</dimen>
+    <dimen name="common_height_bar_top">53dp</dimen>
+    <dimen name="common_text_bar_top_title">20dp</dimen>
+    <dimen name="common_radius_card_item">16dp</dimen>
+    <dimen name="common_radius_dialog">16dp</dimen>
+
+    <!-- 文本编辑框的文字内边距 -->
+    <dimen name="common_edit_padding_left">18dp</dimen>
+    <dimen name="common_edit_padding_top">12dp</dimen>
+    <dimen name="common_edit_padding_right">18dp</dimen>
+    <dimen name="common_edit_padding_bottom">12dp</dimen>
+
+    <!-- 单行文本编辑框的左右外边距 -->
+    <dimen name="common_edit_single_margin_horizontal">16dp</dimen>
+    <!-- 多行文本编辑框的左右外边距 -->
+    <dimen name="common_edit_multi_margin_horizontal">24dp</dimen>
+
+    <!--    文本的内边距-->
+    <dimen name="common_text_padding_left">18dp</dimen>
+    <dimen name="common_text_padding_top">12dp</dimen>
+    <dimen name="common_text_padding_right">18dp</dimen>
+    <dimen name="common_text_padding_bottom">12dp</dimen>
+
+    <!--    多行文本的水平外边距-->
+    <dimen name="common_text_multi_line_margin_horizontal">24dp</dimen>
+    
+    <!--    垂直方向，控件与控件的距离-->
+    <dimen name="widget_margin_vertical">32dp</dimen>
+
+
+</resources>

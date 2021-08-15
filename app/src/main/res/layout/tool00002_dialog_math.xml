@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_info" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_1"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_info" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_2"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_info" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_1" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_4"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_2" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_5"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_3" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="7"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_4" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="8"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_7"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_5" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="28dp"
+        android:paddingTop="16dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="16dp"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_8"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_6" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:text="取消"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_7" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:text="清空"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tool00002_dialog_math_0"
+        app:layout_constraintStart_toEndOf="@+id/tool00002_dialog_math_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_8" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:text="清除"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tool00002_dialog_math_3"
+        app:layout_constraintTop_toBottomOf="@+id/tool00002_dialog_math_9" />
+
+    <TextView
+        android:id="@+id/tool00002_dialog_math_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tool00002_ripple_dialog_math"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="当前坐标：（1， 9）"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tool00002_dialog_math_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
