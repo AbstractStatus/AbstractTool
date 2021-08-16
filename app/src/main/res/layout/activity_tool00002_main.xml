@@ -29,15 +29,15 @@
                 android:id="@+id/tool00002_math_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/widget_margin_vertical"
+                android:layout_marginTop="@dimen/common_widget_margin_vertical"
                 android:visibility="visible" />
 
             <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
                 android:id="@+id/tool00002_calculate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin_vertical"
-                android:layout_marginBottom="@dimen/widget_margin_vertical"
+                android:layout_marginTop="@dimen/common_widget_margin_vertical"
+                android:layout_marginBottom="@dimen/common_widget_margin_vertical"
                 app:button_title="点击解数独" />
         </LinearLayout>
     </ScrollView>

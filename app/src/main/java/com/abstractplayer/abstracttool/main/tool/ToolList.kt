@@ -16,6 +16,8 @@ import com.abstractplayer.abstracttool.toolkits.tool00007.Tool00007Info
 import com.abstractplayer.abstracttool.toolkits.tool00007.Tool00007MainActivity
 import com.abstractplayer.abstracttool.toolkits.tool00008.Tool00008Info
 import com.abstractplayer.abstracttool.toolkits.tool00008.Tool00008MainActivity
+import com.abstractplayer.abstracttool.toolkits.tool00009.Tool00009Info
+import com.abstractplayer.abstracttool.toolkits.tool00009.Tool00009MainActivity
 
 
 class ToolList {
@@ -39,6 +41,8 @@ class ToolList {
             toolList.add(ToolEntity(Tool00007Info, Tool00007MainActivity::class.java))
             //字符串编辑距离
             toolList.add(ToolEntity(Tool00008Info, Tool00008MainActivity::class.java))
+            //调色器
+            toolList.add(ToolEntity(Tool00009Info, Tool00009MainActivity::class.java))
         }
 
     }

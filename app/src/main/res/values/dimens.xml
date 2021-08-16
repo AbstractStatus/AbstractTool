@@ -32,7 +32,10 @@
     <dimen name="common_text_multi_line_margin_horizontal">24dp</dimen>
     
     <!--    垂直方向，控件与控件的距离-->
-    <dimen name="widget_margin_vertical">32dp</dimen>
+    <dimen name="common_widget_margin_vertical">32dp</dimen>
+
+    <!-- seekBar的水平外边距 -->
+    <dimen name="common_seek_bar_margin_horizontal">32dp</dimen>
 
 
 </resources>

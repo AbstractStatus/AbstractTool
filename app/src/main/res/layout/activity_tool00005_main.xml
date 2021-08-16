@@ -24,7 +24,7 @@
                 android:id="@+id/tool00005_main_ball_red"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/widget_margin_vertical"
+                android:layout_marginTop="@dimen/common_widget_margin_vertical"
                 android:gravity="center"
                 android:text="  \n\n  "
                 android:textColor="@color/common_text"
@@ -34,7 +34,7 @@
                 android:id="@+id/tool00005_main_ball_blue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/widget_margin_vertical"
+                android:layout_marginTop="@dimen/common_widget_margin_vertical"
                 android:gravity="center"
                 android:text="  "
                 android:textColor="@color/common_text"
@@ -44,8 +44,8 @@
                 android:id="@+id/tool00005_main_ball_generate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/widget_margin_vertical"
-                android:layout_marginBottom="@dimen/widget_margin_vertical"
+                android:layout_marginTop="@dimen/common_widget_margin_vertical"
+                android:layout_marginBottom="@dimen/common_widget_margin_vertical"
                 app:button_title="点击生成" />
         </LinearLayout>
     </ScrollView>

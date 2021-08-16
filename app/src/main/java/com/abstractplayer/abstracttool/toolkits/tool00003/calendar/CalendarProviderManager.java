@@ -611,8 +611,8 @@ public class CalendarProviderManager {
                 CalendarContract.Events.RDATE,                   // 在表中的列索引16
                 CalendarContract.Events.HAS_ATTENDEE_DATA,       // 在表中的列索引17
                 CalendarContract.Events.LAST_DATE,               // 在表中的列索引18
-                CalendarContract.Events.ORGANIZER,               // 在表中的列索引19
-                CalendarContract.Events.IS_ORGANIZER,            // 在表中的列索引20
+                CalendarContract.Events.EXDATE,               // 在表中的列索引19
+                CalendarContract.Events.EXRULE,            // 在表中的列索引20
                 CalendarContract.Events._ID                      // 在表中的列索引21
         };
 
@@ -691,9 +691,9 @@ public class CalendarProviderManager {
                 calendarEvent.setLastDate(cursor.getInt(cursor.getColumnIndex(
                         CalendarContract.Events.LAST_DATE)));
                 calendarEvent.setOrganizer(cursor.getString(cursor.getColumnIndex(
-                        CalendarContract.Events.ORGANIZER)));
+                        CalendarContract.Events.EXDATE)));
                 calendarEvent.setIsOrganizer(cursor.getString(cursor.getColumnIndex(
-                        CalendarContract.Events.IS_ORGANIZER)));
+                        CalendarContract.Events.EXRULE)));
 
 
                 // ----------------------- 开始查询事件提醒 ------------------------------

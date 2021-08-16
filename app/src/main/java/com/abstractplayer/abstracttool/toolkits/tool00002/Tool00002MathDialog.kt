@@ -28,6 +28,8 @@ class Tool00002MathDialog(private val mathView: Tool00002MathView, val selectInd
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        binding.tool00002DialogMathInfo.text = "第${selectIndexY + 1}行，第${selectIndexX + 1}列"
+
         setListener()
     }
 
@@ -91,10 +93,6 @@ class Tool00002MathDialog(private val mathView: Tool00002MathView, val selectInd
             dismiss()
         }
 
-        binding.tool00002DialogMathInfo.setOnClickListener {
-            binding.tool00002DialogMathInfo.text = "当前坐标：（${selectIndexX + 1}， ${selectIndexY + 1}）"
-            dismiss()
-        }
     }
 
 }

@@ -17,7 +17,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AbstractTool">
-        <activity android:name=".toolkits.tool00008.Tool00008MainActivity"></activity>
+        <activity android:name=".toolkits.tool00009.Tool00009MainActivity"></activity>
+        <activity android:name=".toolkits.tool00008.Tool00008MainActivity" />
         <activity android:name=".toolkits.tool00007.Tool00007MainActivity" />
         <activity android:name=".toolkits.tool00006.Tool00006MainActivity" />
         <activity android:name=".toolkits.tool00005.Tool00005MainActivity" />

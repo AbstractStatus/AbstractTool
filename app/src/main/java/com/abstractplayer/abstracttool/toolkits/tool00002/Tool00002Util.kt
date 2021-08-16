@@ -37,7 +37,7 @@ class Tool00002Util {
             return false
         }
 
-        private fun isValid(board: Array<Array<Int>>, row: Int, col: Int, value: Int): Boolean {
+        fun isValid(board: Array<Array<Int>>, row: Int, col: Int, value: Int): Boolean {
             // 横行不能有重复值
             for (i in 0..8) {
                 if (board[row][i] == value) {

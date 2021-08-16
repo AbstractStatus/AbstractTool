@@ -10,6 +10,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.withTranslation
 
@@ -177,6 +178,12 @@ class Tool00002MathView @JvmOverloads constructor(
 
 
     fun setDigitsList(indexX: Int, indexY: Int, num: Int){
+        if(num != 0){
+            if(!Tool00002Util.isValid(digitList, indexX, indexY, num)){
+                Toast.makeText(context, "同一数字不能同时出现在同一行、列或九宫格", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
         digitList[indexX][indexY] = num
         invalidate()
     }
