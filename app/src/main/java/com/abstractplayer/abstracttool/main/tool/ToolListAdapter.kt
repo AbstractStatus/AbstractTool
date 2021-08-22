@@ -2,6 +2,7 @@ package com.abstractplayer.abstracttool.main.tool
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,10 @@ import com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
 
 
 class ToolListAdapter(private val activity: Activity) : RecyclerView.Adapter<ToolListAdapter.ToolListViewHolder>() {
+    companion object{
+        const val TAG = "ToolListAdapter"
+    }
+
     private val toolList = ToolList.toolList
 
     inner class ToolListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,6 +33,11 @@ class ToolListAdapter(private val activity: Activity) : RecyclerView.Adapter<Too
     }
 
     override fun onBindViewHolder(holder: ToolListViewHolder, position: Int) {
+        //注意：hold.item.visibility = View.GONE仍然为占据位置
+        holder.toolButtonCommonBig.visibility = toolList[position].visible
+
+        Log.d(TAG, "onBindViewHolder: $position + ${toolList[position].visible}")
+
         holder.toolButtonCommonBig.setText(toolList[position].info.getName())
 
         holder.toolButtonCommonBig.container.setOnClickListener {

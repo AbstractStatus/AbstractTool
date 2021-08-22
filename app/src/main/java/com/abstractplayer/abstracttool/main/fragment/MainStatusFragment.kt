@@ -1,6 +1,8 @@
 package com.abstractplayer.abstracttool.main.fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,21 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MainStatusFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+/**
+ * new Fragment的时候不会走任何生命周期，例如加载ViewPager时
+ * 当切换到该页面，生命周期为
+ * onAttach -> onCreate -> onCreateView -> onActivityCreate -> onStart -> onResume
+ * 熄屏了，生命周期为
+ * onPause -> onStop
+ * 重新开屏，生命周期为
+ * onStart -> onResume
+ * 在ViewPager切换，生命周期在onResume和onPause来回
+ * 退出当前Activity，生命周期为
+ * onPause -> onStart -> onDestroyView -> onDestroy -> onDetach
+ * onStop表示完全不可见，onPause表示失去焦点、可能可见
+ * onStart表示可见了，onResume表示有焦点、完全可见
+ */
 class MainStatusFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -28,15 +45,81 @@ class MainStatusFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        Log.d(TAG, "onCreate: ")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.d(TAG, "onCreateView: ")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main_status, container, false)
     }
 
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d(TAG, "onAttach: ")
+    }
+    
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Log.d(TAG, "onActivityCreated: ")
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: ")
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: ")
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause: ")
+    }
+    
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: ")
+    }
+
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d(TAG, "onDetach: ")
+    }
+
+
+    override fun onDestroyOptionsMenu() {
+        super.onDestroyOptionsMenu()
+        Log.d(TAG, "onDestroyOptionsMenu: ")
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d(TAG, "onDestroyView: ")
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: ")
+    }
+    
+    
+
     companion object {
+        const val TAG = "MainStatusFragment"
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

@@ -37,5 +37,8 @@
     <!-- seekBar的水平外边距 -->
     <dimen name="common_seek_bar_margin_horizontal">32dp</dimen>
 
+    <!-- 底部导航栏的高度 -->
+    <dimen name="common_bottom_nav_height">56dp</dimen>
+
 
 </resources>

@@ -1,6 +1,7 @@
 package com.abstractplayer.abstracttool.main.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abstractplayer.abstracttool.R
 import com.abstractplayer.abstracttool.databinding.FragmentMainToolBinding
+import com.abstractplayer.abstracttool.main.tool.ToolList
 import com.abstractplayer.abstracttool.main.tool.ToolListAdapter
 
 // TODO: Rename parameter arguments, choose names that match
@@ -51,10 +53,46 @@ class MainToolFragment : Fragment() {
         binding.mainToolRecycleView.layoutManager = LinearLayoutManager(context)
         binding.mainToolRecycleView.adapter = toolListAdapter
         toolListAdapter.notifyDataSetChanged()
+
+        binding.mainToolSearchBar.setOnSearchTextChange {
+            for(tool in ToolList.toolList){
+                if(tool.info.getName().contains(it)){
+                    tool.visible = View.VISIBLE
+                }
+                else{
+                    tool.visible = View.GONE
+                }
+            }
+            toolListAdapter.notifyDataSetChanged()
+        }
+
+        binding.mainToolSearchBar.setOnRightButtonClick {
+
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d(TAG, "onDetach: ")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d(TAG, "onDestroyView: ")
+    }
+
+    //应用退出后，静态变量并没有销毁，需要在重新设置可见性，避免退出后再进来可见性异常
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: ")
+        for(tool in ToolList.toolList){
+            tool.visible = View.VISIBLE
+        }
     }
 
 
     companion object {
+        const val TAG = "MainToolFragment"
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
