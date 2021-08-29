@@ -43,6 +43,7 @@ class MainActivity : BaseActivity(){
 
 
     private fun setBottomTab(){
+        binding.mainViewPager.isUserInputEnabled = false
         binding.mainViewPager.adapter = object : FragmentStateAdapter(this){
             override fun getItemCount(): Int {
                 return fragmentList.size

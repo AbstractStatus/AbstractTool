@@ -17,14 +17,18 @@ class CommonPatternPwdView @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-
     companion object{
         const val TAG = "CommonPatternPwdView"
     }
 
+    lateinit var onSuccess: () -> Unit
+    lateinit var onError: () -> Unit
+
     private var mWidth = 0f
     private var mHeight = 0f
+
     private var circleRadius = 0f
+
     private var marginDimen = 0f
     private var paddingDimen = 0f
 
@@ -37,25 +41,29 @@ class CommonPatternPwdView @JvmOverloads constructor(
     private var hasPassArr = BooleanArray(9)
 
     //0~8，从左往右，再从上到下
-    private var pwdList = ArrayList<Int>().apply {
-        add(3)
+    var pwdList = ArrayList<Int>().apply {
         add(2)
         add(1)
-        add(5)
+        add(0)
+        add(4)
+        add(6)
         add(7)
         add(8)
-        add(9)
     }
     private var passList = ArrayList<Int>()
 
     private val circleRawPaint = Paint().apply {
         color = Color.WHITE
         style = Paint.Style.STROKE
+        strokeCap = Paint.Cap.ROUND
+        isAntiAlias = true
     }
 
     private val circlePassPaint = Paint().apply {
         color = Color.WHITE
-        style = Paint.Style.FILL
+        style = Paint.Style.FILL_AND_STROKE
+        strokeCap = Paint.Cap.ROUND
+        isAntiAlias = true
     }
 
     private val linePaint = Paint().apply {
@@ -63,6 +71,7 @@ class CommonPatternPwdView @JvmOverloads constructor(
         style = Paint.Style.STROKE
         strokeWidth = 5f
         strokeCap = Paint.Cap.ROUND
+        isAntiAlias = true
     }
 
     init {
@@ -135,19 +144,22 @@ class CommonPatternPwdView @JvmOverloads constructor(
 
 
     private fun drawLineConnect(canvas: Canvas?){
-        if(passList.size <= 1){
-            return ;
+        if(passList.size == 0){
+            return
         }
 
-        for(i in 0..(passList.size - 2)){
-            canvas?.drawLine(
-                    circleXY[passList[i] % 3],
-                    circleXY[passList[i] / 3],
-                    circleXY[passList[(i + 1)] % 3],
-                    circleXY[passList[(i + 1)] / 3],
-                    linePaint
-            )
+        if(passList.size > 1){
+            for(i in 0..(passList.size - 2)){
+                canvas?.drawLine(
+                        circleXY[passList[i] % 3],
+                        circleXY[passList[i] / 3],
+                        circleXY[passList[(i + 1)] % 3],
+                        circleXY[passList[(i + 1)] / 3],
+                        linePaint
+                )
+            }
         }
+
         if(!isCompletePass){
             canvas?.drawLine(
                     circleXY[passList[passList.size - 1] % 3],
@@ -166,7 +178,7 @@ class CommonPatternPwdView @JvmOverloads constructor(
         val y = event?.y ?: 0
         when(event?.action){
             MotionEvent.ACTION_DOWN -> {
-                isCompletePass = false
+                resetView()
                 return true
             }
 
@@ -186,6 +198,14 @@ class CommonPatternPwdView @JvmOverloads constructor(
 
             MotionEvent.ACTION_UP -> {
                 Log.d(TAG, "onTouchEvent: up")
+                if(checkPassword()){
+                    onSuccess()
+                }
+                else{
+                    onError()
+                    linePaint.color = Color.RED
+                    circlePassPaint.color = Color.RED
+                }
                 isCompletePass = true
                 invalidate()
                 return true
@@ -220,9 +240,21 @@ class CommonPatternPwdView @JvmOverloads constructor(
         }
         for(i in 0 until passList.size){
             if(passList[i] != pwdList[i]){
+                Log.d(TAG, "checkPassword: $passList[i] + $pwdList[i]")
                 return false
             }
         }
         return true
+    }
+
+    private fun resetView(){
+        repeat(9){
+            hasPassArr[it] = false
+        }
+        linePaint.color = Color.WHITE
+        circlePassPaint.color = Color.WHITE
+        passList.clear()
+        isCompletePass = false
+        invalidate()
     }
 }

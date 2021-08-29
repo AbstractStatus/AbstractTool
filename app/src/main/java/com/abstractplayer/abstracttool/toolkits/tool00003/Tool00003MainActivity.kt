@@ -33,5 +33,24 @@ class Tool00003MainActivity : BaseActivity() {
 
         binding = ActivityTool00003MainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.commonPatternPasswordView.onSuccess = {
+            Log.d(TAG, "onCreate: ")
+            Toast.makeText(this, "解锁成功", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.commonPatternPasswordView.onError = {
+            Log.d(TAG, "onCreate: ")
+            Toast.makeText(this, "解锁失败", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.commonPatternPasswordView.pwdList = ArrayList<Int>().apply {
+            add(0)
+            add(3)
+            add(6)
+            add(7)
+            add(8)
+
+        }
     }
 }
