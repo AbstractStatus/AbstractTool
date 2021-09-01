@@ -1,6 +1,5 @@
 package com.abstractplayer.abstracttool.common.utils.security
 
-import android.util.Log
 import com.abstractplayer.abstracttool.common.utils.RandomUtil
 import com.abstractplayer.abstracttool.common.utils.TimeUtil
 
@@ -63,6 +62,17 @@ class QRPasswordSysUtil {
         private val keyList = arrayOf('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
             'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
 
+
+        //钥匙无效
+        const val CODE_INVALID_KEY = "CODE_INVALID_KEY"
+        //字符超出范围
+        const val CODE_CHAR_OUT_OF_RANGE = "CODE_CHAR_OUT_OF_RANGE"
+        //输入有误
+        const val CODE_ERROR_INPUT = "CODE_ERROR_INPUT"
+        //钥匙错误
+        const val CODE_ERROR_KEY = "CODE_ERROR_KEY"
+
+
         fun generate(): String{
             // 当前毫秒级时间字符串 取第二位至最后
             val strNow = TimeUtil.getTimeMilliSecondStr().run {
@@ -72,7 +82,7 @@ class QRPasswordSysUtil {
                     .toString()
 
             val strBaseKey = strRandomNum + strNow
-            Log.d(TAG, "generate: strBaseKey: $strBaseKey")
+
             var pre = ""
             // 前缀5位
             repeat(5){
@@ -97,11 +107,11 @@ class QRPasswordSysUtil {
 
         fun encryption(keyAll: String, words: String): String{
             if (keyAll.length != 20){
-                return "钥匙无效"
+                return CODE_INVALID_KEY
             }
             repeat(keyAll.length){
                 if ((keyAll[it].toInt() < 40) or (keyAll[it].toInt() > 90)){
-                    return "钥匙无效"
+                    return CODE_INVALID_KEY
                 }
             }
 
@@ -115,7 +125,7 @@ class QRPasswordSysUtil {
                 } else{
                     key.codePointAt(it) + pre.codePointAt(it % 5) % 9
                 }
-                Log.d(TAG, "encryption: " + ordStrBaseKey.toChar())
+
                 curKey += ordStrBaseKey.toChar()
             }
             var nextKey = ""
@@ -136,7 +146,7 @@ class QRPasswordSysUtil {
                 wordId = words.codePointAt(it)
                 //64**3
                 if (wordId > 262144){
-                    return "字符超出范围"
+                    return CODE_CHAR_OUT_OF_RANGE
                 }
                 baseExponent = 2
                 while (baseExponent >= 0){
@@ -148,7 +158,7 @@ class QRPasswordSysUtil {
                 }
 
             }
-            Log.d(TAG, "encryption: $nextKey + $nextWords")
+
             return nextKey + nextWords
         }
 
@@ -156,7 +166,7 @@ class QRPasswordSysUtil {
             val lengthKey = key.length
             val lengthWords = words.length
             if ((lengthKey != 20) or (lengthWords < 15) or (lengthWords % 3 == 1)){
-                return "输入有误"
+                return CODE_ERROR_INPUT
             }
 
             val pre = key.substring(0, 5)
@@ -165,7 +175,7 @@ class QRPasswordSysUtil {
             var keyKey = ""
             var wordsKey = ""
             var ordStrBaseKey: Int
-            Log.d(TAG, "decryption: preKeyKey $preKeyKey")
+
             repeat(preKeyKey.length){
                 ordStrBaseKey = if ((pre.codePointAt(it % 5) + it) % 2 == 1){
                     preKeyKey.codePointAt(it) - pre.codePointAt(it % 5) % 30
@@ -184,13 +194,12 @@ class QRPasswordSysUtil {
             }
 
             var res = ""
-            Log.d(TAG, "decryption: wordsKey: $wordsKey")
-            Log.d(TAG, "decryption: keyKey: $keyKey")
+
             if (wordsKey != keyKey){
-                return "钥匙错误"
+                return CODE_ERROR_KEY
             }
             val wordsWords = words.substring(15, words.length)
-            Log.d(TAG, "decryption: $wordsWords")
+
             var changeNum = keyKey.codePointAt(keyKey.length - 1)
 
             var baseExponent: Int

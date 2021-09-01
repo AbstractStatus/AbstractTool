@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abstractplayer.abstracttool">
 
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CALENDAR" /> <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA" /> <!-- 读文件权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,6 +40,18 @@
         </activity>
         <activity android:name=".toolkits.tool00001.Tool00001MainActivity" />
         <activity android:name=".main.MainActivity" />
+
+        <!-- 即时通讯和推送 START -->
+        <!-- 即时通讯和推送都需要 PushService -->
+        <service android:name="cn.leancloud.push.PushService"/>
+        <receiver android:name="cn.leancloud.push.LCBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <!-- 即时通讯和推送 END -->
     </application>
 
 </manifest>

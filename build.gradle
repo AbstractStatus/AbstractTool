@@ -5,8 +5,14 @@ buildscript {
         google()
         jcenter()
         mavenCentral()
-        //华为sdk仓库
-        maven {url 'https://developer.huawei.com/repo/'}
+        maven {
+            //华为sdk仓库
+            url 'https://developer.huawei.com/repo/'
+        }
+        maven {
+            //leanCloud仓库
+            url "https://oss.sonatype.org/content/groups/public/"
+        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
@@ -22,8 +28,15 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        //华为sdk仓库
-        maven {url 'https://developer.huawei.com/repo/'}
+        maven {
+            //华为sdk仓库
+            url 'https://developer.huawei.com/repo/'
+        }
+
+        maven {
+            //leanCloud仓库
+            url "https://oss.sonatype.org/content/groups/public/"
+        }
     }
 }
 
