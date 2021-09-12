@@ -15,9 +15,13 @@ import com.abstractplayer.abstracttool.R
 class ButtonCommonBig @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
-    private var textView: TextView
+    private var textView: TextView?
     var container: ConstraintLayout
-    private var buttonTitle: String
+    var buttonTitle: String = ""
+    set(value) {
+        field = value
+        textView?.text = value
+    }
 
     init {
         context.theme.obtainStyledAttributes(attrs, R.styleable.ButtonCommonBig, 0, 0)
@@ -32,11 +36,11 @@ class ButtonCommonBig @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.common_button, this)
         textView = findViewById(R.id.common_btn_title)
         container = findViewById(R.id.common_btn_container)
-        textView.text = buttonTitle
+        textView?.text = buttonTitle
     }
 
     fun setText(s: String){
-        textView.text = s
+        textView?.text = s
     }
 
 }

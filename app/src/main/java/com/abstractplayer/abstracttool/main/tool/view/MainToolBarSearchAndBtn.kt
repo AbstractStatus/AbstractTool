@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
 import com.abstractplayer.abstracttool.R
+import com.abstractplayer.abstracttool.common.utils.DimenUtil
 
 class MainToolBarSearchAndBtn @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -18,8 +19,8 @@ class MainToolBarSearchAndBtn @JvmOverloads constructor(
     private var imageView: ImageView
     private var editText: EditText
 
-    private lateinit var onSearchTextChange: (s: String) -> Unit
-    private lateinit var onRightButtonClick: () -> Unit
+    private var onSearchTextChange: ((s: String) -> Unit)? = null
+    private var onRightButtonClick: (() -> Unit)? = null
 
     fun setOnSearchTextChange(onSearchTextChange: (s: String) -> Unit){
         this.onSearchTextChange = onSearchTextChange
@@ -36,6 +37,8 @@ class MainToolBarSearchAndBtn @JvmOverloads constructor(
         imageView = findViewById(R.id.btn_more)
         editText = findViewById(R.id.edit_search)
 
+        DimenUtil.setStatusBarPadding(context, this)
+
         editText.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
 
@@ -46,13 +49,13 @@ class MainToolBarSearchAndBtn @JvmOverloads constructor(
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                onSearchTextChange(s.toString())
+                onSearchTextChange?.let { it(s.toString()) }
             }
 
         })
 
         imageView.setOnClickListener {
-
+            onRightButtonClick?.let { it1 -> it1() }
         }
 
     }

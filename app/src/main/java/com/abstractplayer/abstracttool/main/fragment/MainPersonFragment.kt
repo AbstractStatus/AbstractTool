@@ -1,11 +1,15 @@
 package com.abstractplayer.abstracttool.main.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.abstractplayer.abstracttool.R
+import com.abstractplayer.abstracttool.databinding.FragmentMainPersonBinding
+import com.abstractplayer.abstracttool.main.person.MainPersonLoginActivity
+import com.abstractplayer.abstracttool.main.person.MainPersonSettingActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +22,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MainPersonFragment : Fragment() {
+    private val binding by lazy {  FragmentMainPersonBinding.inflate(layoutInflater) }
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,10 +41,29 @@ class MainPersonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_person, container, false)
+        return binding.root
     }
 
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        binding.mainPersonContainAccount.setOnClickListener {
+            val intent = Intent(activity, MainPersonLoginActivity::class.java)
+            startActivityForResult(intent, CODE_REQUEST_LOGIN)
+        }
+
+        binding.mainPersonBtnSetting.container.setOnClickListener {
+            val intent = Intent(activity, MainPersonSettingActivity::class.java)
+            startActivityForResult(intent, CODE_REQUEST_SETTING)
+        }
+    }
+
+
     companion object {
+        const val TAG = "MainPersonFragment"
+        const val CODE_REQUEST_LOGIN = 1
+        const val CODE_REQUEST_SETTING = 2
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

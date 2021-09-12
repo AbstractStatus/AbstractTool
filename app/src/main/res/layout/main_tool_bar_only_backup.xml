@@ -8,8 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_height_bar_top"
-        android:layout_marginTop="@dimen/common_margin_bar_top"
-        android:background="@color/black">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/imageView"
@@ -23,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="@id/view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24_white" />
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
         <TextView
             android:id="@+id/textView"

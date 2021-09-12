@@ -10,6 +10,10 @@
     <dimen name="common_text_bar_top_title">20dp</dimen>
     <dimen name="common_radius_card_item">16dp</dimen>
     <dimen name="common_radius_dialog">16dp</dimen>
+    <dimen name="common_radius_default">8dp</dimen>
+    <dimen name="common_stroke_width">4dp</dimen>
+    <dimen name="common_margin_status_bar_default">40dp</dimen>
+    <dimen name="common_margin_vertical_button">16dp</dimen>
 
     <!-- 文本编辑框的文字内边距 -->
     <dimen name="common_edit_padding_left">18dp</dimen>

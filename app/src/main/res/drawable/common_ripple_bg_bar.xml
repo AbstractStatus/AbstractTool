@@ -3,7 +3,7 @@
     <item>
         <shape>
             <corners android:radius="@dimen/common_radius_card_item"></corners>
-            <solid android:color="@color/black"></solid>
+            <solid android:color="@color/white"></solid>
         </shape>
     </item>
 </ripple>

@@ -2,8 +2,10 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/common_ripple_button">
     <item>
         <shape>
-            <corners android:radius="@dimen/common_button_radius" />
+            <corners android:radius="@dimen/common_radius_default" />
             <solid android:color="@color/white" />
+            <corners android:radius="@dimen/common_radius_default"/>
+            <stroke android:color="@color/black" android:width="@dimen/common_stroke_width"/>
         </shape>
     </item>
 </ripple>

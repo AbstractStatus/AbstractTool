@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_widget_margin_vertical"
-                app:srcCompat="@drawable/ic_baseline_mood_24_black" />
+                app:srcCompat="@drawable/ic_baseline_mood_24" />
 
             <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
                 android:id="@+id/tool00007_code_save"

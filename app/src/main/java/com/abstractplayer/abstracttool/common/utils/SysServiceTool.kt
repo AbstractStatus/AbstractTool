@@ -1,9 +1,14 @@
 package com.abstractplayer.abstracttool.common.utils
 
+import android.app.Activity
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Process
 import android.widget.Toast
+import com.abstractplayer.abstracttool.main.person.setting.SettingVector
 import java.lang.Exception
 
 /**
@@ -24,6 +29,16 @@ class SysServiceTool {
             }catch (e: Exception){
                 Toast.makeText(context, "复制失败", Toast.LENGTH_SHORT).show();
             }
+        }
+
+
+        //重启app
+        fun rebootApp(context: Context){
+            (context as Activity).intent.putExtra("REBOOT", "reboot")
+            val restartIntent = PendingIntent.getActivity(context.applicationContext, 0, context.intent, PendingIntent.FLAG_ONE_SHOT)
+            val mgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            mgr[AlarmManager.RTC, System.currentTimeMillis() + 1000] = restartIntent
+            Process.killProcess(Process.myPid())
         }
 
 

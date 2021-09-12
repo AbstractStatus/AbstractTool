@@ -21,8 +21,8 @@ class CommonPatternPwdView @JvmOverloads constructor(
         const val TAG = "CommonPatternPwdView"
     }
 
-    lateinit var onSuccess: () -> Unit
-    lateinit var onError: () -> Unit
+    var onSuccess: (() -> Unit)? = null
+    var onError: (() -> Unit)? = null
 
     private var mWidth = 0f
     private var mHeight = 0f
@@ -199,10 +199,10 @@ class CommonPatternPwdView @JvmOverloads constructor(
             MotionEvent.ACTION_UP -> {
                 Log.d(TAG, "onTouchEvent: up")
                 if(checkPassword()){
-                    onSuccess()
+                    onSuccess?.let { it() }
                 }
                 else{
-                    onError()
+                    onError?.let { it() }
                     linePaint.color = Color.RED
                     circlePassPaint.color = Color.RED
                 }
