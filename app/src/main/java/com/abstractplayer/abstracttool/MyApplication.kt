@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import cn.leancloud.LCLogger
 import cn.leancloud.LeanCloud
 import com.abstractplayer.abstracttool.common.handler.CrashHandler
+import com.abstractplayer.abstracttool.common.utils.CalendarUtil
+import com.abstractplayer.abstracttool.common.utils.UnicodeUtil
+import com.abstractplayer.abstracttool.dreamland.DreamlandKey
 import com.abstractplayer.abstracttool.main.person.setting.SettingKey
 import com.tencent.mmkv.MMKV
 
@@ -38,6 +41,16 @@ class MyApplication : Application() {
         //leanCloud初始化
         LeanCloud.initialize(this, appId, appKey, serverHost)
 
+        initMainStatus()
+    }
 
+    private fun initMainStatus(){
+        //初始化中文字符
+        val preDate = MMKV.defaultMMKV().decodeString(DreamlandKey.KEY_CHINESE_CHAR_DATE, "0000-00-00")
+        val curDate = CalendarUtil.getCurDateString()
+        if(preDate != curDate){
+            MMKV.defaultMMKV().encode(DreamlandKey.KEY_CHINESE_CHAR_DATE, curDate)
+            MMKV.defaultMMKV().encode(DreamlandKey.KEY_CHINESE_CHAR, UnicodeUtil.getOneChineseCharacter())
+        }
     }
 }

@@ -1,13 +1,12 @@
 package com.abstractplayer.abstracttool.main.person.setting
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.util.Log
-import android.widget.Toast
 import com.abstractplayer.abstracttool.common.utils.SysServiceTool
 import com.abstractplayer.abstracttool.main.person.MainPersonSettingActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tencent.mmkv.MMKV
+
 
 /**
  ** Created by AbstractStatus at 2021/9/12 13:43.
@@ -38,8 +37,10 @@ object SettingVector {
             add(SettingEntity(
                     0x11,
                     SettingEntity.TYPE_BOOLEAN,
-                    "当前为白天模式",
-                    SettingBooleanData(true)
+                    if(MMKV.defaultMMKV().decodeBool(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE))
+                        "当前为黑夜模式"
+                    else "当前为白天模式",
+                    SettingBooleanData(MMKV.defaultMMKV().decodeBool(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE))
             ))
         })
     }
@@ -65,10 +66,18 @@ object SettingVector {
         }
 
         put(0x11){
-            var dayNightModeState = MMKV.defaultMMKV().decodeBool(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE)
-            dayNightModeState = !dayNightModeState
-            MMKV.defaultMMKV().encode(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE, dayNightModeState)
-            SysServiceTool.rebootApp(context)
+
+            MaterialAlertDialogBuilder(context)
+                    .setTitle("黑白模式切换")
+                    .setMessage("${entityVector[0x10]?.get(0)?.settingName}" +
+                            "\n是否切换成")
+                    .setPositiveButton("确定") { dialogInterface, i ->
+                        var dayNightModeState = MMKV.defaultMMKV().decodeBool(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE)
+                        dayNightModeState = !dayNightModeState
+                        MMKV.defaultMMKV().encode(SettingKey.KEY_BOOLEAN_DAY_NIGHT_MODE, dayNightModeState)
+                    }
+                    .setNegativeButton("取消") { dialogInterface, i -> }
+                    .show()
         }
     }
 

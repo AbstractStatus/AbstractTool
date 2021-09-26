@@ -1,15 +1,20 @@
 package com.abstractplayer.abstracttool.main.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+
 import android.view.View
 import android.view.ViewGroup
-import com.abstractplayer.abstracttool.R
 import com.abstractplayer.abstracttool.databinding.FragmentMainPersonBinding
 import com.abstractplayer.abstracttool.main.person.MainPersonLoginActivity
 import com.abstractplayer.abstracttool.main.person.MainPersonSettingActivity
+import com.abstractplayer.abstracttool.nameless.NamelessMainActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,9 +50,20 @@ class MainPersonFragment : Fragment() {
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        setListener()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun setListener(){
         binding.mainPersonContainAccount.setOnClickListener {
             val intent = Intent(activity, MainPersonLoginActivity::class.java)
             startActivityForResult(intent, CODE_REQUEST_LOGIN)
@@ -57,6 +73,21 @@ class MainPersonFragment : Fragment() {
             val intent = Intent(activity, MainPersonSettingActivity::class.java)
             startActivityForResult(intent, CODE_REQUEST_SETTING)
         }
+
+        binding.btnNamelessStartup.container.setOnLongClickListener {
+            context?.let { it1 -> MaterialAlertDialogBuilder(it1)
+                .setTitle("         ")
+                .setMessage("                                                           ")
+                .setPositiveButton("         "){dialog, which ->
+                    val intent = Intent(activity, NamelessMainActivity::class.java)
+                    startActivityForResult(intent, CODE_REQUEST_NAMELESS)
+                }
+                .setNegativeButton("  "){dialog, which ->
+
+                }
+                .show() }
+            true
+        }
     }
 
 
@@ -64,6 +95,9 @@ class MainPersonFragment : Fragment() {
         const val TAG = "MainPersonFragment"
         const val CODE_REQUEST_LOGIN = 1
         const val CODE_REQUEST_SETTING = 2
+        const val CODE_REQUEST_NAMELESS = 3
+
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

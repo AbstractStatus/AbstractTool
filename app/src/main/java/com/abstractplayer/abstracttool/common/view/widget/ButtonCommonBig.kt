@@ -27,7 +27,7 @@ class ButtonCommonBig @JvmOverloads constructor(
         context.theme.obtainStyledAttributes(attrs, R.styleable.ButtonCommonBig, 0, 0)
                 .apply {
                     try {
-                        buttonTitle = getString(R.styleable.ButtonCommonBig_button_title).toString()
+                        buttonTitle = getString(R.styleable.ButtonCommonBig_button_title) ?: ""
                     }finally {
                         recycle()
                     }

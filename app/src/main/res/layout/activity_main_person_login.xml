@@ -19,12 +19,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/common_margin_status_bar_default"
+                app:shapeAppearanceOverlay="@style/roundRectImage16dp"
                 app:srcCompat="@drawable/logo" />
 
             <EditText

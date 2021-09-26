@@ -1,6 +1,7 @@
 package com.abstractplayer.abstracttool.main.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.abstractplayer.abstracttool.R
+import com.abstractplayer.abstracttool.databinding.FragmentMainStatusBinding
+import com.abstractplayer.abstracttool.dreamland.DreamlandKey
+import com.abstractplayer.abstracttool.dreamland.DreamlandMainActivity
+import com.tencent.mmkv.MMKV
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +44,10 @@ class MainStatusFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val binding by lazy { FragmentMainStatusBinding.inflate(layoutInflater) }
+
+    private val charChinese by lazy { MMKV.defaultMMKV().decodeString(DreamlandKey.KEY_CHINESE_CHAR, "荣") }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -53,7 +62,7 @@ class MainStatusFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         Log.d(TAG, "onCreateView: ")
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_status, container, false)
+        return binding.root
     }
 
 
@@ -66,6 +75,13 @@ class MainStatusFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.d(TAG, "onActivityCreated: ")
+
+        binding.tvMainStatusChineseChar.text = charChinese
+        binding.tvMainStatusChineseChar.setOnLongClickListener {
+            val intent = Intent(activity, DreamlandMainActivity::class.java)
+            startActivityForResult(intent, CODE_REQUEST_DREAMLAND)
+            true
+        }
     }
 
 
@@ -120,6 +136,7 @@ class MainStatusFragment : Fragment() {
 
     companion object {
         const val TAG = "MainStatusFragment"
+        const val CODE_REQUEST_DREAMLAND = 1
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

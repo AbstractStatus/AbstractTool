@@ -46,6 +46,11 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/common_margin_vertical_button"
                 app:button_title="设置" />
+
+            <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
+                android:id="@+id/btn_nameless_startup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </ScrollView>
 

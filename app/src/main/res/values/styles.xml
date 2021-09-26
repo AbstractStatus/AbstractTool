@@ -4,4 +4,9 @@
         <item name="colorControlNormal">@color/common_not_active</item>
         <item name="colorControlActivated">@color/black</item>
     </style>
+
+    <style name="roundRectImage16dp" parent="Theme.AbstractTool">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>

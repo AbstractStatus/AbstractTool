@@ -44,5 +44,7 @@
     <!-- 底部导航栏的高度 -->
     <dimen name="common_bottom_nav_height">56dp</dimen>
 
+    <dimen name="main_status_chinese_char_padding">32dp</dimen>
+
 
 </resources>
