@@ -7,13 +7,13 @@
     android:orientation="vertical"
     tools:context=".toolkits.tool00002.Tool00002MainActivity">
 
-    <com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup
+    <com.abstractplayer.abstracttool.common.view.widget.bar.MainToolBarOnlyBackup
         android:id="@+id/commonBarOnlyBackup2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible">
 
-    </com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup>
+    </com.abstractplayer.abstracttool.common.view.widget.bar.MainToolBarOnlyBackup>
 
     <ScrollView
         android:layout_width="match_parent"

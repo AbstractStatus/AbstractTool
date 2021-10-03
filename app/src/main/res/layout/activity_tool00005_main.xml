@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".toolkits.tool00005.Tool00005MainActivity">
 
-    <com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup
+    <com.abstractplayer.abstracttool.common.view.widget.bar.MainToolBarOnlyBackup
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

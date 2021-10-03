@@ -1,4 +1,4 @@
-package com.abstractplayer.abstracttool.main.tool.view
+package com.abstractplayer.abstracttool.common.view.widget.bar
 
 import android.app.Activity
 import android.content.Context
@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.abstractplayer.abstracttool.R
-import com.abstractplayer.abstracttool.common.constant.StringConstant
 import com.abstractplayer.abstracttool.common.key.BundleKey
 import com.abstractplayer.abstracttool.common.utils.DimenUtil
 

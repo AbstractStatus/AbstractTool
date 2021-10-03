@@ -8,10 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.abstractplayer.abstracttool.R
 import com.abstractplayer.abstracttool.databinding.FragmentMainStatusBinding
-import com.abstractplayer.abstracttool.dreamland.DreamlandKey
-import com.abstractplayer.abstracttool.dreamland.DreamlandMainActivity
+import com.abstractplayer.abstracttool.main.status.dreamland.DreamlandKey
+import com.abstractplayer.abstracttool.main.status.dreamland.DreamlandMainActivity
 import com.tencent.mmkv.MMKV
 
 // TODO: Rename parameter arguments, choose names that match

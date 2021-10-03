@@ -2,12 +2,11 @@ package com.abstractplayer.abstracttool
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
-import cn.leancloud.LCLogger
 import cn.leancloud.LeanCloud
 import com.abstractplayer.abstracttool.common.handler.CrashHandler
 import com.abstractplayer.abstracttool.common.utils.CalendarUtil
 import com.abstractplayer.abstracttool.common.utils.UnicodeUtil
-import com.abstractplayer.abstracttool.dreamland.DreamlandKey
+import com.abstractplayer.abstracttool.main.status.dreamland.DreamlandKey
 import com.abstractplayer.abstracttool.main.person.setting.SettingKey
 import com.tencent.mmkv.MMKV
 

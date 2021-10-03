@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".toolkits.tool00001.Tool00001MainActivity">
 
-    <com.abstractplayer.abstracttool.main.tool.view.MainToolBarOnlyBackup
+    <com.abstractplayer.abstracttool.common.view.widget.bar.MainToolBarOnlyBackup
         android:id="@+id/commonBarOnlyBackup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

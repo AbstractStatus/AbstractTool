@@ -2,8 +2,6 @@ package com.abstractplayer.abstracttool.main.person.setting
 
 import android.content.Context
 import android.content.Intent
-import com.abstractplayer.abstracttool.common.utils.SysServiceTool
-import com.abstractplayer.abstracttool.main.person.MainPersonSettingActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tencent.mmkv.MMKV
 

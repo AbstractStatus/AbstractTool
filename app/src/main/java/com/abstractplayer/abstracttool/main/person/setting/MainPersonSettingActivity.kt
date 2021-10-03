@@ -1,4 +1,4 @@
-package com.abstractplayer.abstracttool.main.person
+package com.abstractplayer.abstracttool.main.person.setting
 
 
 import android.os.Bundle
@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.abstractplayer.abstracttool.common.base.BaseActivity
 import com.abstractplayer.abstracttool.databinding.ActivityMainPersonSettingBinding
-import com.abstractplayer.abstracttool.main.person.setting.SettingAdapter
-import com.abstractplayer.abstracttool.main.person.setting.SettingVector
 
 class MainPersonSettingActivity : BaseActivity() {
     companion object{

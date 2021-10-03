@@ -11,8 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.abstractplayer.abstracttool.databinding.FragmentMainPersonBinding
 import com.abstractplayer.abstracttool.main.person.MainPersonLoginActivity
-import com.abstractplayer.abstracttool.main.person.MainPersonSettingActivity
-import com.abstractplayer.abstracttool.nameless.NamelessMainActivity
+import com.abstractplayer.abstracttool.main.person.setting.MainPersonSettingActivity
+import com.abstractplayer.abstracttool.main.person.nameless.NamelessMainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
