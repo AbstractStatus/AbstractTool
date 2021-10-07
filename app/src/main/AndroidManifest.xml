@@ -20,8 +20,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AbstractTool">
-        <activity android:name="com.abstractplayer.abstracttool.main.person.nameless.NamelessMainActivity"></activity>
-        <activity android:name="com.abstractplayer.abstracttool.main.status.dreamland.DreamlandMainActivity" />
+        <activity android:name=".toolkits.tool00010.Tool00010MainActivity"></activity>
+        <activity android:name=".main.person.nameless.NamelessMainActivity" />
+        <activity android:name=".main.status.dreamland.DreamlandMainActivity" />
         <activity android:name=".main.person.setting.MainPersonSettingActivity" />
         <activity android:name=".main.person.MainPersonLoginActivity" />
         <activity android:name=".toolkits.tool00009.Tool00009MainActivity" />

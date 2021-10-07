@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".toolkits.tool00010.Tool00010MainActivity">
+
+    <com.abstractplayer.abstracttool.common.view.widget.bar.MainToolBarOnlyBackup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tool00010_main_num1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_edit_single_margin_horizontal"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            android:layout_marginEnd="@dimen/common_edit_single_margin_horizontal"
+            android:background="@drawable/common_shape_edit"
+            android:gravity="left|center_vertical"
+            android:hint="输入一个正整数"
+            android:inputType="number"
+            android:paddingLeft="@dimen/common_edit_padding_left"
+            android:paddingTop="@dimen/common_edit_padding_top"
+            android:paddingRight="@dimen/common_edit_padding_right"
+            android:paddingBottom="@dimen/common_edit_padding_bottom"
+            android:textColor="@color/common_text"
+            android:textColorHint="@color/common_text_hint"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            android:gravity="center"
+            android:text="×"
+            android:textColor="@color/common_text"
+            android:textSize="36dp" />
+
+        <EditText
+            android:id="@+id/tool00010_main_num2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_edit_single_margin_horizontal"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            android:layout_marginEnd="@dimen/common_edit_single_margin_horizontal"
+            android:background="@drawable/common_shape_edit"
+            android:gravity="left|center_vertical"
+            android:hint="输入一个正整数"
+            android:inputType="number"
+            android:paddingLeft="@dimen/common_edit_padding_left"
+            android:paddingTop="@dimen/common_edit_padding_top"
+            android:paddingRight="@dimen/common_edit_padding_right"
+            android:paddingBottom="@dimen/common_edit_padding_bottom"
+            android:textColor="@color/common_text"
+            android:textColorHint="@color/common_text_hint"
+            android:textSize="18dp" />
+
+        <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
+            android:id="@+id/tool00010_main_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            app:button_title="计算" />
+
+        <com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig
+            android:id="@+id/tool00010_main_copy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            app:button_title="复制（结果如下）">
+
+        </com.abstractplayer.abstracttool.common.view.widget.ButtonCommonBig>
+
+        <TextView
+            android:id="@+id/tool00010_main_res"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/common_text_multi_line_margin_horizontal"
+            android:layout_marginTop="@dimen/common_widget_margin_vertical"
+            android:layout_marginRight="@dimen/common_text_multi_line_margin_horizontal"
+            android:layout_marginBottom="@dimen/common_widget_margin_vertical"
+            android:background="@drawable/common_shape_text_multi_line"
+            android:gravity="top|left"
+            android:paddingLeft="@dimen/common_text_padding_left"
+            android:paddingTop="@dimen/common_text_padding_top"
+            android:paddingRight="@dimen/common_text_padding_right"
+            android:paddingBottom="@dimen/common_text_padding_bottom"
+            android:textColor="@color/common_text"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

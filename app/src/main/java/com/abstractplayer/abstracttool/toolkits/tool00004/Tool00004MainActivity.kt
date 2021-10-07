@@ -37,12 +37,12 @@ class Tool00004MainActivity : BaseActivity() {
             val addDigitsNum2 = binding.tool00004MainNum2.text.toString()
 
             if(!Tool00004Util.isDigitsStr(addDigitsNum1)){
-                Toast.makeText(this, "第一个空不存在合法的正整数", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "第一个空不存在合法的整数", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if(!Tool00004Util.isDigitsStr(addDigitsNum2)){
-                Toast.makeText(this, "第二个空不存在合法的正整数", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "第二个空不存在合法的整数", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

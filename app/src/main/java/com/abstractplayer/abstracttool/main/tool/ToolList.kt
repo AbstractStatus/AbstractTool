@@ -18,6 +18,8 @@ import com.abstractplayer.abstracttool.toolkits.tool00008.Tool00008Info
 import com.abstractplayer.abstracttool.toolkits.tool00008.Tool00008MainActivity
 import com.abstractplayer.abstracttool.toolkits.tool00009.Tool00009Info
 import com.abstractplayer.abstracttool.toolkits.tool00009.Tool00009MainActivity
+import com.abstractplayer.abstracttool.toolkits.tool00010.Tool00010Info
+import com.abstractplayer.abstracttool.toolkits.tool00010.Tool00010MainActivity
 
 
 class ToolList {
@@ -43,6 +45,8 @@ class ToolList {
             toolList.add(ToolEntity(Tool00008Info, Tool00008MainActivity::class.java))
             //调色器
             toolList.add(ToolEntity(Tool00009Info, Tool00009MainActivity::class.java))
+            //两数相乘
+            toolList.add(ToolEntity(Tool00010Info, Tool00010MainActivity::class.java))
         }
 
     }
